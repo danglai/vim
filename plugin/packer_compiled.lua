@@ -44,8 +44,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/Users/lai/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/Users/lai/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/Users/lai/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/Users/lai/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/Users/lai/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
+local package_path_str = "/Users/geotech/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/Users/geotech/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/Users/geotech/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/Users/geotech/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/Users/geotech/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -71,35 +71,35 @@ time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   ["coc.nvim"] = {
     loaded = true,
-    path = "/Users/lai/.local/share/nvim/site/pack/packer/start/coc.nvim",
+    path = "/Users/geotech/.local/share/nvim/site/pack/packer/start/coc.nvim",
     url = "https://github.com/neoclide/coc.nvim"
   },
   fzf = {
     loaded = true,
-    path = "/Users/lai/.local/share/nvim/site/pack/packer/start/fzf",
+    path = "/Users/geotech/.local/share/nvim/site/pack/packer/start/fzf",
     url = "https://github.com/junegunn/fzf"
   },
   ["fzf.vim"] = {
     loaded = true,
-    path = "/Users/lai/.local/share/nvim/site/pack/packer/start/fzf.vim",
+    path = "/Users/geotech/.local/share/nvim/site/pack/packer/start/fzf.vim",
     url = "https://github.com/junegunn/fzf.vim"
   },
   ["impatient.nvim"] = {
     config = { "require('impatient')" },
     loaded = true,
-    path = "/Users/lai/.local/share/nvim/site/pack/packer/start/impatient.nvim",
+    path = "/Users/geotech/.local/share/nvim/site/pack/packer/start/impatient.nvim",
     url = "https://github.com/lewis6991/impatient.nvim"
   },
   ["nvim-tree.lua"] = {
     config = { "require('config.nvim-tree')" },
     loaded = true,
-    path = "/Users/lai/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    path = "/Users/geotech/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
     url = "https://github.com/kyazdani42/nvim-tree.lua"
   },
   ["packer.nvim"] = {
     loaded = false,
     needs_bufread = false,
-    path = "/Users/lai/.local/share/nvim/site/pack/packer/opt/packer.nvim",
+    path = "/Users/geotech/.local/share/nvim/site/pack/packer/opt/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
   semshi = {
@@ -107,33 +107,33 @@ _G.packer_plugins = {
     loaded = false,
     needs_bufread = false,
     only_cond = false,
-    path = "/Users/lai/.local/share/nvim/site/pack/packer/opt/semshi",
+    path = "/Users/geotech/.local/share/nvim/site/pack/packer/opt/semshi",
     url = "https://github.com/numirias/semshi"
   },
   sonokai = {
     loaded = false,
     needs_bufread = false,
-    path = "/Users/lai/.local/share/nvim/site/pack/packer/opt/sonokai",
+    path = "/Users/geotech/.local/share/nvim/site/pack/packer/opt/sonokai",
     url = "https://github.com/sainnhe/sonokai"
   },
   ["vim-python-pep8-indent"] = {
     loaded = false,
     needs_bufread = false,
     only_cond = false,
-    path = "/Users/lai/.local/share/nvim/site/pack/packer/opt/vim-python-pep8-indent",
+    path = "/Users/geotech/.local/share/nvim/site/pack/packer/opt/vim-python-pep8-indent",
     url = "https://github.com/Vimjas/vim-python-pep8-indent"
   },
   ["vim-visual-multi"] = {
     loaded = false,
     needs_bufread = false,
     only_cond = false,
-    path = "/Users/lai/.local/share/nvim/site/pack/packer/opt/vim-visual-multi",
+    path = "/Users/geotech/.local/share/nvim/site/pack/packer/opt/vim-visual-multi",
     url = "https://github.com/mg979/vim-visual-multi"
   },
   ["wilder.nvim"] = {
     loaded = false,
     needs_bufread = false,
-    path = "/Users/lai/.local/share/nvim/site/pack/packer/opt/wilder.nvim",
+    path = "/Users/geotech/.local/share/nvim/site/pack/packer/opt/wilder.nvim",
     url = "https://github.com/gelguy/wilder.nvim"
   }
 }
@@ -155,7 +155,7 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
-vim.cmd [[au FileType python ++once lua require("packer.load")({'semshi', 'vim-python-pep8-indent'}, { ft = "python" }, _G.packer_plugins)]]
+vim.cmd [[au FileType python ++once lua require("packer.load")({'vim-python-pep8-indent', 'semshi'}, { ft = "python" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)

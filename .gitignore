@@ -1,4 +1,5 @@
 ### Vim ###
+packer_compiled.lua
 
 # Swap
 [._]*.s[a-v][a-z]

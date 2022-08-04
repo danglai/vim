@@ -7,7 +7,7 @@
 ```cmd
 brew install nvim
 brew install neovim-qt
-git clone --single-branch --branch nvim-mac https://github.com/danglai/vim ~/.config/nvim
+git clone --single-branch --branch mac https://github.com/danglai/vim ~/.config/nvim
 pip3 install --upgrade autopep8 jedi-language-server jedi wheel yarp pynvim neovim
 ```
 2. Mở 1 file bằng nvim, `:ps` > `:Semshi enable` > `:UpdateRemotePlugins`
