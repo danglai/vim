@@ -8,5 +8,6 @@
   "python.analysis.diagnosticMode": "workspace",
   "coc.preferences.formatOnType": true,
   "coc.preferences.noselect": true,
-  "suggest.enablePreselect": false
+  "suggest.enablePreselect": false,
+  "suggest.noselect": true
 }
