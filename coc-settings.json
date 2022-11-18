@@ -9,5 +9,8 @@
   "coc.preferences.formatOnType": true,
   "coc.preferences.noselect": true,
   "suggest.enablePreselect": false,
-  "suggest.noselect": true
+  "suggest.noselect": true,
+  "yaml.schemas": {
+      "https://raw.githubusercontent.com/instrumenta/kubernetes-json-schema/master/master/all.json": "/*.yml"
+  }
 }

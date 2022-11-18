@@ -9,6 +9,9 @@ map <leader>va :call ToggleThemeMode('')<CR>
 " nnoremap <leader>sp :sp term://cmd<CR> " Add cmd below
 " nnoremap <leader>vsp :vsp term://cmd<CR> " Add cmd left
 
+" copy absolute path to clipboard
+" nnoremap <leader>cf :let @+ = expand("%:p") <CR>
+
 " Toggle Word wrap
 nnoremap <A-z> :set wrap!<CR>
  

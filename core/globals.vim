@@ -45,3 +45,5 @@ let g:loaded_matchit = 1
 let g:loaded_matchparen = 1
 
 set guifont=Monaco:h16
+set wrap
+set mouse=
