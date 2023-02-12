@@ -89,10 +89,10 @@ require("packer").startup({
   end
 })
 
-local status, _ = pcall(require, 'packer_compiled')
-if not status then
-  vim.notify("Error requiring packer_compiled.lua: run PackerSync to fix!")
-end
+-- local status, _ = pcall(require, 'packer_compiled.lua')
+-- if not status then
+--   vim.notify("Error requiring packer_compiled.lua: run PackerSync to fix haha!")
+-- end
 
 local remap = vim.api.nvim_set_keymap
 local npairs = require('nvim-autopairs')
