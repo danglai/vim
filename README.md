@@ -5,46 +5,15 @@
 
 > https://tuckerchapman.com/2020/05/09/vimrc_organization/
 
-## Thông tin các nhánh
-- Nhánh cho window:
-  - [nvim0.6](https://github.com/danglai/vim/tree/nvim0.6): Nhánh mới nhất nvim 0.6 with packer (COC suggestion and Language Server Protocol in comment)
-- Nhánh cho linux:
-- 
-## .vimrc
+## .vimrc config for vscode vim
 
 ```
 " ~/.vimrc
-
-syntax enable
-syntax on
-
-source ~/.vim/init/plugins.vimrc   " plugin specific settings
-source ~/.vim/init/general.vimrc   " general settings
-source ~/.vim/init/leader.vimrc    " leader key settings
-source ~/.vim/init/functions.vimrc " custom functions
-source ~/.vim/init/python.vimrc    " config for python
-
-```
-
-## Init file organization
-- `plugins`   : install plugins and their config
-- `general`	  : store tab settings, color and other general settings
-- `leader`	  : shortcut keyboard, key call function
-- `functions` : store custom functions
-- `python`    : custom setting for language
-
-## Install with PlugInstall
-- `vim x`
-- `:PlugInstall`
-
-## .vimrc
-```bash
 scriptencoding utf-8
 
 set splitbelow splitright 
 set ttimeoutlen=50
-set clipboard=unnamedplus
-
+set clipboard^=unnamed,unnamedplus
 
 set wildignore+=*.o,*.obj,*.dylib,*.bin,*.dll,*.exe
 set wildignore+=*/.git/*,*/.svn/*,*/__pycache__/*,*/build/**
@@ -154,22 +123,54 @@ nnoremap <leader>e $
 vnoremap <leader>s 0
 vnoremap <leader>e $
 
-let key_not_cut = ["c", "d", "x"]
-let modes = ['v', 'n']
+vnoremap c "_c
+vnoremap C "_C
+vnoremap <leader>c c
+vnoremap <leader>C C
+nnoremap c "_c
+nnoremap C "_C
+nnoremap <leader>c c
+nnoremap <leader>C C
+vnoremap d "_d
+vnoremap D "_D
+vnoremap <leader>d d
+vnoremap <leader>D D
+nnoremap d "_d
+nnoremap D "_D
+nnoremap <leader>d d
+nnoremap <leader>D D
+vnoremap x "_x
+vnoremap X "_X
+vnoremap <leader>x x
+vnoremap <leader>X X
+nnoremap x "_x
+nnoremap X "_X
+nnoremap <leader>x x
+nnoremap <leader>X X
 
-for key in key_not_cut
-  for mode in modes
-    " let query = mode.'noremap '.key . ' "_' . key
-    " echo query
-    " execute query
+" add replace in visual mode
+vnoremap p pgvy
 
-    execute mode.'noremap '.key . ' "_' . key
-    execute mode.'noremap '.toupper(key) . ' "_' . toupper(key)
-    execute mode.'noremap <leader>'.key . ' ' . key 
-    execute mode.'noremap <leader>'.toupper(key) . ' ' . toupper(key)
-    
-  endfor
-endfor
+" let key_not_cut = ["c", "d", "x"]
+" let modes = ['v', 'n']
+
+" for key in key_not_cut
+"   for mode in modes
+"     " let query = mode.'noremap '.key . ' "_' . key
+"     " echo query
+"     " execute query
+" 
+"     execute mode.'noremap '.key . ' "_' . key
+"     echo mode.'noremap '.key . ' "_' . key
+"     execute mode.'noremap '.toupper(key) . ' "_' . toupper(key)
+"     echo mode.'noremap '.toupper(key) . ' "_' . toupper(key)
+"     execute mode.'noremap <leader>'.key . ' ' . key 
+"     echo mode.'noremap <leader>'.key . ' ' . key 
+"     execute mode.'noremap <leader>'.toupper(key) . ' ' . toupper(key)
+"     echo mode.'noremap <leader>'.toupper(key) . ' ' . toupper(key)
+"     
+"   endfor
+" endfor
 
 
 " Backspace to remove tab previous
@@ -192,4 +193,5 @@ nnoremap <silent> <C-l> <c-w>l<CR>
 nmap <leader>f :silent %!autopep8 --ignore=E501 -<CR>
 
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
 ```
