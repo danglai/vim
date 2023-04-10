@@ -112,8 +112,12 @@ nnoremap <leader>e $
 vnoremap <leader>s 0
 vnoremap <leader>e $
 
+
+vnoremap y "*y
 nnoremap y "*y
 nnoremap p "*p
+vnoremap p pgvy
+nnoremap <leader>p p
 
 " vnoremap c "_c
 " vnoremap C "_C
@@ -140,8 +144,6 @@ nnoremap p "*p
 " nnoremap <leader>x x
 " nnoremap <leader>X X
 
-" add replace in visual mode
-vnoremap p pgvy
 
 " let key_not_cut = ["c", "d", "x"]
 " let modes = ['v', 'n']
