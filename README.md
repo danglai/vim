@@ -38,13 +38,11 @@ source ~/.vim/init/python.vimrc    " config for python
 - `:PlugInstall`
 
 ## .vimrc
-```bash
-scriptencoding utf-8
+```bashscriptencoding utf-8
 
 set splitbelow splitright 
 set ttimeoutlen=50
-set clipboard=unnamedplus
-
+" set clipboard^=unnamed,unnamedplus
 
 set wildignore+=*.o,*.obj,*.dylib,*.bin,*.dll,*.exe
 set wildignore+=*/.git/*,*/.svn/*,*/__pycache__/*,*/build/**
@@ -154,22 +152,59 @@ nnoremap <leader>e $
 vnoremap <leader>s 0
 vnoremap <leader>e $
 
-let key_not_cut = ["c", "d", "x"]
-let modes = ['v', 'n']
 
-for key in key_not_cut
-  for mode in modes
-    " let query = mode.'noremap '.key . ' "_' . key
-    " echo query
-    " execute query
+vnoremap y "*y
+nnoremap y "*y
+nnoremap p "*p
+vnoremap p pgvy
+nnoremap <leader>p p
 
-    execute mode.'noremap '.key . ' "_' . key
-    execute mode.'noremap '.toupper(key) . ' "_' . toupper(key)
-    execute mode.'noremap <leader>'.key . ' ' . key 
-    execute mode.'noremap <leader>'.toupper(key) . ' ' . toupper(key)
-    
-  endfor
-endfor
+" vnoremap c "_c
+" vnoremap C "_C
+" vnoremap <leader>c c
+" vnoremap <leader>C C
+" nnoremap c "_c
+" nnoremap C "_C
+" nnoremap <leader>c c
+" nnoremap <leader>C C
+" vnoremap d "_d
+" vnoremap D "_D
+" vnoremap <leader>d d
+" vnoremap <leader>D D
+" nnoremap d "_d
+" nnoremap D "_D
+" nnoremap <leader>d d
+" nnoremap <leader>D D
+" vnoremap x "_x
+" vnoremap X "_X
+" vnoremap <leader>x x
+" vnoremap <leader>X X
+" nnoremap x "_x
+" nnoremap X "_X
+" nnoremap <leader>x x
+" nnoremap <leader>X X
+
+
+" let key_not_cut = ["c", "d", "x"]
+" let modes = ['v', 'n']
+
+" for key in key_not_cut
+"   for mode in modes
+"     " let query = mode.'noremap '.key . ' "_' . key
+"     " echo query
+"     " execute query
+" 
+"     execute mode.'noremap '.key . ' "_' . key
+"     echo mode.'noremap '.key . ' "_' . key
+"     execute mode.'noremap '.toupper(key) . ' "_' . toupper(key)
+"     echo mode.'noremap '.toupper(key) . ' "_' . toupper(key)
+"     execute mode.'noremap <leader>'.key . ' ' . key 
+"     echo mode.'noremap <leader>'.key . ' ' . key 
+"     execute mode.'noremap <leader>'.toupper(key) . ' ' . toupper(key)
+"     echo mode.'noremap <leader>'.toupper(key) . ' ' . toupper(key)
+"     
+"   endfor
+" endfor
 
 
 " Backspace to remove tab previous
